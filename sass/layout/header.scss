@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.metaBar {
+  position: relative;
+  padding: 10px 0;
+  background-color: $metaBarBackground-color;
+  font-family: $body-font;
+}
+
+.headlineMetaBar {
+  text-align: center;
+}
+    h1 {
+      font-weight: bold;
+      color: $headlineBar;
+    }

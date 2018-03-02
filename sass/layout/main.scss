@@ -1,0 +1,99 @@
+.siteMain {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -.003em;
+}
+h3 {
+  font-size: 26px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
+p {
+  font-family: $body-font;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mainArticle {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerArticleContent {
+  justify-content: center;
+}
+
+.infoPost {
+  margin-top: 30px;
+  text-align: center;
+  p {
+    font-size: 28px;
+    font-weight: 400;
+    color: $headline-color;
+  }
+}
+
+.headlinePost {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  h2 {
+    color: $headline-color;
+  }
+}
+
+.subtitlePost {
+  text-align: center;
+  margin-bottom: 30px;
+  h3 {
+    color: $subtitlePost;
+  }
+}
+
+.imgPost {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.textPost {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.buttonPostOpen {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-right: 20px;
+  .buttonLink {
+    color: $brightBlue;
+    font-size: 26px;
+    font-weight: bold;
+
+  }
+}
+
+.textLink {
+  color: $headline-color;
+  font-weight: bold;
+}
