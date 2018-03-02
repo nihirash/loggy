@@ -61,10 +61,13 @@
                       picture)) 
      (redirect "/"))))
 
-(defn index-action []
+(defn feed-page-action [page]
   (html-response
    (view/render-html
-    (view/index (posts-feed "0")))))
+    (view/index (posts-feed page) (Integer/parseInt page)))))
+
+(defn index-action []
+  (feed-page-action "0"))
 
 (defn page-action [page]
   (html-response
@@ -123,11 +126,19 @@
                                   :name name
                                   :url url
                                   :copy copy})
-                   (redirect "/")))))
+                   (redirect "/config")))))
+
+(defn robots-txt-action []
+  {:headers {"Content-Type" "text/plain"}
+   :body (str "User-agent: *\r\n\r\n"
+              "Allow: *\r\n"
+              "Sitemap: " (:host @config) "/sitemap.xml\r\n"
+              "Host: " (:host @config) "\r\n")})
 
 (compojure/defroutes routes
   ;; Posts
   (compojure/GET "/" [] (index-action))
+  (compojure/GET "/nojs/:page" [page] (feed-page-action page))
   (compojure/GET "/page/:page" [page] (page-action page))
   (compojure/GET "/post/new" [] (redirect (str "/post/" (utils/time-based-uuid) "/edit")))
   (compojure/GET "/post/:id/:img" [id img] (ring.util.response/file-response (str "data/posts/" id "/" img)))
@@ -137,9 +148,10 @@
   (compojure/GET "/logout" [] (logout-action))
   (compojure/GET "/login" [:as req] (login-page-action req)) 
   (compojure/POST "/login" [:as req] (try-auth req))
-
+  
   ;; For robots
   (compojure/GET "/sitemap.xml" [] (sitemap-action))
+  (compojure/GET "/robots.txt" [] (robots-txt-action))
 
   ;; Authed area
   (compojure/GET "/post/:id/edit" [id :as req] (edit-post-form-action id req))

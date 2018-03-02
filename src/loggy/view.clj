@@ -59,7 +59,8 @@
     [:style {:dangerouslySetInnerHTML {:__html (str (styles))}} ]
     [:header.metaBar
      [:.headlineMetaBar
-      [:h1 title]]]
+      [:a {:href (:host @config)}
+       [:h1 title]]]]
     [:main.siteMain
      children]
     [:footer.footer
@@ -75,11 +76,15 @@
   (for [post-id post-ids]
           (post (db/get-post post-id) nil)))
 
-(rum/defc index [post-ids]
+(rum/defc index [post-ids page-num]
   (page (:title @config)
-        (post-feed post-ids)))
+        (post-feed post-ids)
+        [:noscript
+         (if (seq post-ids)
+           [:a {:href (str "/nojs/" (inc page-num)) } "Ранее" ]
+           [:a {:href "/"} "На главную"])]))
 
-(rum/defc post-page [post-id]
+(rum/defc post-page [post-id] 
   (let [post-data (db/get-post post-id)]
     (page (str (:title @config))
           (post post-data true))))
