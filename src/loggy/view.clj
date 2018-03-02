@@ -98,7 +98,7 @@
     (map (fn [id] [:url {} [:loc {} (format "%s/post/%s" (:host @config) id)]]) post-ids)]))
 
 (rum/defc text-input [name title value]
-  [:div
+  [:div.formItem
    [:label {:for name} title]
    [:input {:type "text"
             :name name
@@ -107,7 +107,7 @@
             :placeholder title}]])
 
 (rum/defc password-input [name title]
-  [:div
+  [:div.formItem
    [:label {:for name} title]
    [:input {:type "password"
             :name name
@@ -115,7 +115,7 @@
             :placeholder title}]])
 
 (rum/defc text-area [name value title]
-  [:div
+  [:div.formItem
    [:label {:for name} title]
    [:textarea {:name name
                :id name
@@ -123,7 +123,7 @@
                :value value}]])
 
 (rum/defc file-input [name]
-  [:div
+  [:div.formItem
    [:input {:type "file"
             :name name}]])
 
@@ -137,7 +137,7 @@
       (text-input field
                   (get field-captions field)
                   (get @config field)))
-    [:button.btn-sm.btn.btn-a "Изменить"]]))
+    [:button.button "Изменить"]]))
 и   
 (rum/defc login-page [to]
   (page "Авторизация"
@@ -150,7 +150,7 @@
          (text-input "login" "Login" "")
          (password-input "password" "Password")
          [:div
-          [:button "Войти"]]]))
+          [:button.button "Войти"]]]))
 
 (rum/defc edit-post-page [post-id]
   "Using it for creating page too"
@@ -166,5 +166,5 @@
            (file-input "picture")
            (text-area "body" (:body post) "Текст сообщения")
            [:div 
-            [:button.btn-sm.btn.btn-a
+            [:button.button
              (if create? "Создать" "Редактировать")]]])))

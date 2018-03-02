@@ -28,6 +28,12 @@
 
 (defn now [] (java.util.Date.))
 
+(defn max-post-date [posts]
+  (->> posts
+       (map :created)
+       (sort compare)
+       last))
+
 (defn save-post! [post picture]
   (let [dir (io/file (str "data/posts/" (:id post)))
         picture-name (let [in-name (:filename picture)
