@@ -138,7 +138,7 @@
                   (get field-captions field)
                   (get @config field)))
     [:button.btn-sm.btn.btn-a "Изменить"]]))
-   
+и   
 (rum/defc login-page [to]
   (page "Авторизация"
         [:.subtitlePost [:h2 "Пожалуйста авторизуйтесь"]]

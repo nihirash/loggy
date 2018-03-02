@@ -27,8 +27,6 @@
         login (get params "login")
         password (get params "password")
         to (get params "to")]
-    (println (pr-str [login (:login @config)
-                      password (:password @config)]))
     (if (and (= login (:login @config))
              (= password (:password @config)))
       (assoc (redirect (or to "/post/new")) :session true)
@@ -108,24 +106,15 @@
 (defn update-setting-action [req]
   (wrap-authed req
                (fn [req]
-                 (println req)
-                 (let [params (:params req)
-                       login (get params "login")
-                       password (get params "password")
-                       title (get params "title")
-                       per-page (get params "per-page")
-                       host (get params "host")
-                       name (get params "name")
-                       url (get params "url")
-                       copy (get params "copy")]
-                   (save-config! {:login login
-                                  :password password
-                                  :title title
-                                  :per-page (Integer/parseInt per-page)
-                                  :host host
-                                  :name name
-                                  :url url
-                                  :copy copy})
+                 (let [params (:params req)]
+                   (save-config! {:login (get params "login")
+                                  :password (get params "password")
+                                  :title (get params "title")
+                                  :per-page (Integer/parseInt (get params "per-page"))
+                                  :host (get params "host")
+                                  :name (get params "name")
+                                  :url (get params "url")
+                                  :copy (get params "copy")})
                    (redirect "/config")))))
 
 (defn robots-txt-action []
