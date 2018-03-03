@@ -9,7 +9,8 @@
             [loggy.view :as view]
             [loggy.database :as db]
             [rum.core :as rum]
-            [loggy.utils :as utils])
+            [loggy.utils :as utils]
+            [loggy.feed :as feed])
   (:use [loggy.config])
   (:gen-class))
 
@@ -88,8 +89,13 @@
 
 (defn sitemap-action []
   {:status 200
-   :headers { "Content-Type" "text/xml; charset=utf-8" }
+   :headers {"Content-Type" "text/xml; charset=utf-8"}
    :body (view/site-map (db/post-ids))})
+
+(defn atom-feed-action []
+  {:status 200
+   :headers {"Content-Type" "application/xml; charset=utf-8"}
+   :body (feed/atom (db/post-ids))})
 
 (defn edit-post-form-action [id req]
   (wrap-authed req
@@ -141,7 +147,8 @@
   ;; For robots
   (compojure/GET "/sitemap.xml" [] (sitemap-action))
   (compojure/GET "/robots.txt" [] (robots-txt-action))
-
+  (compojure/GET "/feed.xml" [] (atom-feed-action))
+  
   ;; Authed area
   (compojure/GET "/post/:id/edit" [id :as req] (edit-post-form-action id req))
   (compojure/POST "/post/:id/edit" [id :as req] (store-post id req))

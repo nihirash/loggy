@@ -1,4 +1,5 @@
 (ns loggy.utils
+  (:require [clojure.data.xml :as xml])
   (:import [java.util UUID]))
 
 (defn time-based-uuid []
@@ -17,3 +18,5 @@
     (slurp source)
     (catch Exception e
       nil)))
+
+(def xmlize (comp xml/indent-str xml/sexp-as-element))

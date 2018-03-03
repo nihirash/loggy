@@ -4,7 +4,6 @@
             [endophile.hiccup :as endohiccup]
             [endophile.core :as endophile]
             [loggy.database :as db]
-            [clojure.data.xml :as xml]
             [clojure.string :as str])
   (:use [loggy.config]
         [loggy.utils]))
@@ -26,13 +25,16 @@
   "Returns only first paragraph of post body"
   (first (str/split post-body #"\n")))
 
+(defn render-markdown [body]
+  (endohiccup/to-hiccup
+   (endophile/mp body)))
+
 (rum/defc post [post full?]
   "Render single post component"
   (let [post-body (if full?
                     (:body post)
                     (cut-body (:body post)))
-        post-body-rendered (endohiccup/to-hiccup
-                            (endophile/mp post-body))]
+        post-body-rendered (render-markdown post-body)]
     [:article.mainArticle
      [:.headerArticleContent
       [:.infoPost [:p (render-date (:created post))]]
@@ -89,8 +91,6 @@
     (page (str (:title @config))
           (post post-data true))))
 
-(def xmlize (comp xml/indent-str xml/sexp-as-element))
-
 (defn site-map [post-ids]
   (xmlize
    [:urlset {:xmlns "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -138,7 +138,7 @@
                   (get field-captions field)
                   (get @config field)))
     [:button.button "Изменить"]]))
-и   
+   
 (rum/defc login-page [to]
   (page "Авторизация"
         [:.subtitlePost [:h2 "Пожалуйста авторизуйтесь"]]
