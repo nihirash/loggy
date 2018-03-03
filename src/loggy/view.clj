@@ -4,7 +4,6 @@
             [endophile.hiccup :as endohiccup]
             [endophile.core :as endophile]
             [loggy.database :as db]
-            [clojure.data.xml :as xml]
             [clojure.string :as str])
   (:use [loggy.config]
         [loggy.utils]))
@@ -26,13 +25,16 @@
   "Returns only first paragraph of post body"
   (first (str/split post-body #"\n")))
 
+(defn render-markdown [body]
+  (endohiccup/to-hiccup
+   (endophile/mp body)))
+
 (rum/defc post [post full?]
   "Render single post component"
   (let [post-body (if full?
                     (:body post)
                     (cut-body (:body post)))
-        post-body-rendered (endohiccup/to-hiccup
-                            (endophile/mp post-body))]
+        post-body-rendered (render-markdown post-body)]
     [:article.mainArticle
      [:.headerArticleContent
       [:.infoPost [:p (render-date (:created post))]]
@@ -51,9 +53,10 @@
   "Common page component"
   [:html
    [:head
-    [:meta { :http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
-    [:meta { :name "viewport" :content "width=device-width, initial-scale=1.0"}]
-    [:link { :href "https://fonts.googleapis.com/css?family=Cormorant" :rel "stylesheet"} ]
+    [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
+    [:link {:href "https://fonts.googleapis.com/css?family=Cormorant" :rel "stylesheet"} ]
+    [:link {:href "/feed.xml" :type "application/atom+xml" :rel "alternative" :title "ATOM Feed"}]
     [:title title]]
    [:body.container
     [:style {:dangerouslySetInnerHTML {:__html (str (styles))}} ]
@@ -88,8 +91,6 @@
   (let [post-data (db/get-post post-id)]
     (page (str (:title @config))
           (post post-data true))))
-
-(def xmlize (comp xml/indent-str xml/sexp-as-element))
 
 (defn site-map [post-ids]
   (xmlize
@@ -138,7 +139,7 @@
                   (get field-captions field)
                   (get @config field)))
     [:button.button "Изменить"]]))
-и   
+   
 (rum/defc login-page [to]
   (page "Авторизация"
         [:.subtitlePost [:h2 "Пожалуйста авторизуйтесь"]]
