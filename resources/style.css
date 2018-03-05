@@ -70,8 +70,7 @@ h2, h3 {
   line-height: 1.4;
   letter-spacing: -.003em;
   color: #3333FF;
-  margin-left: 20px;
-  margin-top: 10px; }
+  margin: 10px; }
 
 p {
   font-family: "Fira Sans", sans-serif;
@@ -109,8 +108,6 @@ a {
   .headlinePost a {
     color: #3333FF;
     font-family: "Fira Sans", sans-serif; }
-  .headlinePost h2 {
-    margin: 0 auto; }
 
 .subtitlePost {
   text-align: center;
@@ -265,3 +262,7 @@ button.button {
   background-color: white;
   border: 1px solid #3333FF;
   cursor: pointer; }
+
+@media (max-width: 480px) and (min-width: 320px) {
+  h2 {
+    font-size: 20px; } }

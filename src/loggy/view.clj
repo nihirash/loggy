@@ -24,8 +24,9 @@
   (first (str/split post-body #"\n")))
 
 (defn render-markdown [body]
-  (endohiccup/to-hiccup
-   (endophile/mp body)))
+  (endophile/html-string
+   (endophile/to-clj
+    (endophile/mp body))))
 
 (rum/defc post [post full?]
   "Render single post component"

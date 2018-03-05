@@ -12,8 +12,7 @@ h2, h3{
   line-height: 1.4;
   letter-spacing: -.003em;
   color: $headline-color;
-  margin-left: 20px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 p {
@@ -59,9 +58,6 @@ a {
   color: #3333FF;
     font-family: $body-font;
 }
-  h2 {
-    margin: 0 auto;
-  }
 }
 
 
