@@ -16,7 +16,7 @@
      [:published {} (render-iso-date (:created post))]
      [:author {} [:name {} (:name @config)]]
      [:content {:type "text/html" :href url}
-      (view/render-markdown (:body post))]]))
+       (view/cut-body (:body post))]]))
 
 (defn atom-feed [post-ids]
   (let [posts (map db/get-post post-ids)
