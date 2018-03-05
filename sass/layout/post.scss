@@ -1,0 +1,74 @@
+.textPost {
+  p {
+    strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    a {
+      color: $headline-color;
+    }
+  }
+  ul {
+    margin: 5px 0 5px 20px;
+    li {
+      list-style: circle;
+      list-style-position: inside;
+      font-family: "Cormorant", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+    }
+  }
+
+  ol {
+    margin: 5px 0 5px 20px;
+    li {
+      list-style: decimal;
+      list-style-position: inside;
+      font-family: "Cormorant", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    position: relative;
+    padding: 30px 0 30px 90px;
+    &:before {
+      content: "\201C";
+      font-family: serif;
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      color: white;
+      background: #3333FF;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 50px;
+      line-height: 1.2;
+      text-align: center;
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+    font-family: monospace;
+    line-height: 20px;
+    display: block;
+    border-left: dashed 2px #3333ff;
+    font-size: 14px;
+    margin: 20px 0;
+    padding-left: 30px;
+  }
+}

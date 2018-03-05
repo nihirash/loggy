@@ -5,13 +5,16 @@
 }
 
 h2 {
+  font-family: $body-font;
   font-size: 32px;
   font-weight: 600;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -.003em;
+  color: $headline-color;
 }
 h3 {
+  font-family: $body-font;
   font-size: 26px;
   font-weight: 400;
   font-style: normal;
@@ -29,6 +32,7 @@ p {
 }
 
 a {
+  font-family: $body-font;
   text-decoration: none;
   cursor: pointer;
 }
@@ -46,6 +50,7 @@ a {
   margin-top: 30px;
   text-align: center;
   p {
+    font-family: $body-font;
     font-size: 28px;
     font-weight: 400;
     color: $headline-color;
@@ -53,13 +58,13 @@ a {
 }
 
 .headlinePost {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
-  h2 {
-    color: $headline-color;
-  }
+  a {
+  color: #3333FF;
 }
+}
+
 
 .subtitlePost {
   text-align: center;
@@ -69,28 +74,25 @@ a {
   }
 }
 
-.imgPost {
+.imgPost, .textPost p img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
 
 .textPost {
-  margin-top: 20px;
   padding: 5px;
 }
 
-.buttonPostOpen {
+.buttonPostOpen a {
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
-  margin-right: 20px;
-  .buttonLink {
-    color: $brightBlue;
-    font-size: 26px;
-    font-weight: bold;
-
-  }
+  color: $brightBlue;
+  font-family: $body-font;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .textLink {

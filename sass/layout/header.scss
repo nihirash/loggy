@@ -1,8 +1,11 @@
 .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
+  font-family: $body-font;
   font-size: 28px;
 }
 
@@ -14,9 +17,10 @@ h1 {
 }
 
 .headlineMetaBar {
-  text-align: center;
+  margin-left: 10%;
 }
     h1 {
+      font-family: $body-font;
       font-weight: bold;
       color: $headlineBar;
     }

@@ -1,9 +1,12 @@
 .footer {
   margin-top: 30px;
   padding: 10px;
-  background-color: $footer-color;
-  a {
-    color: $white;
+
+
+  *, a {
+    font-family: $body-font;
+    color: $brightBlue;
     margin: 5px;
+    text-align: center;
   }
 }

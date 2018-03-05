@@ -1,0 +1,64 @@
+.formItem {
+  label {
+    display: inline-block;
+    font-family: $body-font;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    padding: 10px 0;
+    margin-right: 20px;
+  }
+
+  input[type="text"] {
+    height: 20px;
+    width: 100%;
+    padding: 5px 8px;
+
+  }
+
+  input[type="file"] {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #b6b6b6;
+
+  }
+
+  input[type="password"] {
+    height: 20px;
+    width: 100%;
+    padding: 5px 8px;
+  }
+
+  textarea {
+    padding: 8px;
+    min-height: 300px;
+    width: 100%;
+    padding-left: 5%;
+  }
+
+}
+
+div> button.button {
+  margin-top: 20px;
+  margin-left: 45%;
+  padding: 10px 20px;
+  font-family: $body-font;
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid $brightBlue;
+  cursor: pointer;
+}
+
+button.button {
+  margin-top: 20px;
+  margin-left: 40%;
+  padding: 10px 20px;
+  font-family: $body-font;
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid $brightBlue;
+  cursor: pointer;
+}
