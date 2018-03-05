@@ -18,7 +18,7 @@ h3 {
   font-size: 26px;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.58;
+  line-height: 1.4;
   letter-spacing: -.003em;
 }
 
@@ -27,7 +27,7 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
-  line-height: 1.58;
+  line-height: 1.4;
   letter-spacing: -.003em;
 }
 
@@ -62,7 +62,11 @@ a {
   text-align: center;
   a {
   color: #3333FF;
+    font-family: $body-font;
 }
+  h2 {
+    padding: 0 10px;
+  }
 }
 
 
@@ -80,10 +84,6 @@ a {
   width: 100%;
 }
 
-.textPost {
-  padding: 5px;
-}
-
 .buttonPostOpen a {
   display: flex;
   justify-content: flex-end;
@@ -92,7 +92,7 @@ a {
   font-family: $body-font;
   font-size: 24px;
   font-weight: bold;
-  font-style: italic;
+  margin-right: 30px;
 }
 
 .textLink {

@@ -76,7 +76,7 @@ h3 {
   font-size: 26px;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.58;
+  line-height: 1.4;
   letter-spacing: -.003em; }
 
 p {
@@ -84,7 +84,7 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
-  line-height: 1.58;
+  line-height: 1.4;
   letter-spacing: -.003em; }
 
 a {
@@ -112,7 +112,10 @@ a {
   margin-bottom: 10px;
   text-align: center; }
   .headlinePost a {
-    color: #3333FF; }
+    color: #3333FF;
+    font-family: "Cormorant", serif; }
+  .headlinePost h2 {
+    padding: 0 10px; }
 
 .subtitlePost {
   text-align: center;
@@ -125,9 +128,6 @@ a {
   margin: 0 auto;
   width: 100%; }
 
-.textPost {
-  padding: 5px; }
-
 .buttonPostOpen a {
   display: flex;
   justify-content: flex-end;
@@ -136,7 +136,7 @@ a {
   font-family: "Cormorant", serif;
   font-size: 24px;
   font-weight: bold;
-  font-style: italic; }
+  margin-right: 30px; }
 
 .textLink {
   color: #3333FF;
@@ -151,17 +151,18 @@ a {
     margin: 5px;
     text-align: center; }
 
-.textPost p strong {
-  font-weight: bold; }
-
-.textPost p em {
-  font-style: italic; }
-
-.textPost p a {
-  color: #3333FF; }
+.textPost p {
+  font-family: "Cormorant", serif;
+  margin: 10px 20px 0 20px; }
+  .textPost p strong {
+    font-weight: bold; }
+  .textPost p em {
+    font-style: italic; }
+  .textPost p a {
+    color: #3333FF; }
 
 .textPost ul {
-  margin: 5px 0 5px 20px; }
+  margin: 20px 0 0 20px; }
   .textPost ul li {
     list-style: circle;
     list-style-position: inside;
@@ -169,11 +170,12 @@ a {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
-    line-height: 1.58;
-    letter-spacing: -.003em; }
+    line-height: 1.4;
+    letter-spacing: -.003em;
+    padding-bottom: 20px; }
 
 .textPost ol {
-  margin: 5px 0 5px 20px; }
+  margin: 20px 0 0 20px; }
   .textPost ol li {
     list-style: decimal;
     list-style-position: inside;
@@ -181,19 +183,20 @@ a {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
-    line-height: 1.58;
-    letter-spacing: -.003em; }
+    line-height: 1.4;
+    letter-spacing: -.003em;
+    padding-bottom: 20px; }
 
 .textPost blockquote {
   font-style: italic;
   position: relative;
-  padding: 30px 0 30px 90px; }
+  padding: 10px 0 10px 50px; }
   .textPost blockquote:before {
     content: "\201C";
     font-family: serif;
     position: absolute;
     left: 20px;
-    top: 30px;
+    top: 15px;
     color: white;
     background: #3333FF;
     width: 40px;
@@ -211,7 +214,8 @@ a {
   border-left: dashed 2px #3333ff;
   font-size: 14px;
   margin: 20px 0;
-  padding-left: 30px; }
+  padding-left: 30px;
+  margin-left: 20px; }
 
 .formItem label {
   display: inline-block;
