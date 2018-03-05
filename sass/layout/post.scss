@@ -17,17 +17,17 @@
     }
   }
   ul {
-    margin: 20px;
+    margin: 10px 20px 10px 20px;
     li {
       list-style: circle;
       list-style-position: inside;
-      font-family: "Cormorant", serif;
+      font-family: $body-font;
       font-weight: 400;
       font-style: normal;
-      font-size: 22px;
-      line-height: 1.4;
+      font-size: 18px;
+      line-height: 30px;
       letter-spacing: -.003em;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
     }
     li:last-child {
       padding-bottom: 0;
@@ -35,17 +35,17 @@
   }
 
   ol {
-    margin: 20px;
+    margin: 10px 20px 10px 20px;
     li {
       list-style: decimal;
       list-style-position: inside;
-      font-family: "Cormorant", serif;
+      font-family: $body-font;
       font-weight: 400;
       font-style: normal;
-      font-size: 22px;
-      line-height: 1.4;
+      font-size: 18px;
+      line-height: 30px;
       letter-spacing: -.003em;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
     }
     li:last-child {
       padding-bottom: 0;
@@ -58,7 +58,7 @@
     padding: 10px 0 10px 50px;
     &:before {
       content: "\201C";
-      font-family: serif;
+      font-family: $body-font;
       position: absolute;
       left: 20px;
       top: 15px;
@@ -68,8 +68,8 @@
       height: 40px;
       border-radius: 50%;
       font-size: 50px;
-      line-height: 1.2;
-      text-align: center;
+      line-height: 1.4;
+
     }
   }
 
@@ -80,8 +80,7 @@
     display: block;
     border-left: dashed 2px #3333ff;
     font-size: 14px;
-    margin: 20px 0;
-    padding-left: 30px;
-    margin-left: 20px;
+    padding-left: 20px;
+    margin: 20px;
   }
 }

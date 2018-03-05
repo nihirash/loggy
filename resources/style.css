@@ -40,20 +40,20 @@ table {
   flex-direction: column; }
 
 h1 {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 28px; }
 
 .metaBar {
   position: relative;
   padding: 10px 0;
   background-color: #3333FF;
-  font-family: "Cormorant", serif; }
+  font-family: "Fira Sans", sans-serif; }
 
 .headlineMetaBar {
   margin-left: 10%; }
 
 h1 {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: bold;
   color: #ffffff; }
 
@@ -63,32 +63,37 @@ h1 {
   margin: 0 auto; }
 
 h2 {
-  font-family: "Cormorant", serif;
-  font-size: 32px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 26px;
   font-weight: 600;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -.003em;
-  color: #3333FF; }
+  color: #3333FF;
+  margin-left: 20px;
+  margin-top: 10px; }
 
 h3 {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 26px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  letter-spacing: -.003em; }
+  letter-spacing: -.003em;
+  color: #3333FF;
+  margin-left: 20px;
+  margin-top: 10px; }
 
 p {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 22px;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 30px;
   letter-spacing: -.003em; }
 
 a {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   text-decoration: none;
   cursor: pointer; }
 
@@ -97,14 +102,15 @@ a {
   flex-direction: column; }
 
 .headerArticleContent {
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 20px; }
 
 .infoPost {
   margin-top: 10px;
   text-align: center; }
   .infoPost p {
-    font-family: "Cormorant", serif;
-    font-size: 28px;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16px;
     font-weight: 400;
     color: #3333FF; }
 
@@ -113,15 +119,16 @@ a {
   text-align: center; }
   .headlinePost a {
     color: #3333FF;
-    font-family: "Cormorant", serif; }
+    font-family: "Fira Sans", sans-serif; }
   .headlinePost h2 {
-    padding: 0 10px; }
+    margin: 0 auto; }
 
 .subtitlePost {
   text-align: center;
   margin-bottom: 30px; }
   .subtitlePost h3 {
-    color: #757575; }
+    color: #757575;
+    padding: 0 10px; }
 
 .imgPost, .textPost p img {
   display: block;
@@ -131,28 +138,27 @@ a {
 .buttonPostOpen a {
   display: flex;
   justify-content: flex-end;
-  margin-top: 30px;
   color: #3333FF;
-  font-family: "Cormorant", serif;
-  font-size: 24px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
   font-weight: bold;
-  margin-right: 30px; }
+  margin-top: 20px;
+  margin-right: 40px; }
 
 .textLink {
   color: #3333FF;
   font-weight: bold; }
 
 .footer {
-  margin-top: 30px;
-  padding: 10px; }
+  margin-bottom: 10px; }
   .footer *, .footer a {
-    font-family: "Cormorant", serif;
+    font-family: "Fira Sans", sans-serif;
     color: #3333FF;
     margin: 5px;
     text-align: center; }
 
 .textPost p {
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   margin: 10px 20px 0 20px; }
   .textPost p strong {
     font-weight: bold; }
@@ -162,32 +168,32 @@ a {
     color: #3333FF; }
 
 .textPost ul {
-  margin: 20px; }
+  margin: 10px 20px 10px 20px; }
   .textPost ul li {
     list-style: circle;
     list-style-position: inside;
-    font-family: "Cormorant", serif;
+    font-family: "Fira Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 30px;
     letter-spacing: -.003em;
-    padding-bottom: 20px; }
+    padding-bottom: 10px; }
   .textPost ul li:last-child {
     padding-bottom: 0; }
 
 .textPost ol {
-  margin: 20px; }
+  margin: 10px 20px 10px 20px; }
   .textPost ol li {
     list-style: decimal;
     list-style-position: inside;
-    font-family: "Cormorant", serif;
+    font-family: "Fira Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 30px;
     letter-spacing: -.003em;
-    padding-bottom: 20px; }
+    padding-bottom: 10px; }
   .textPost ol li:last-child {
     padding-bottom: 0; }
 
@@ -197,7 +203,7 @@ a {
   padding: 10px 0 10px 50px; }
   .textPost blockquote:before {
     content: "\201C";
-    font-family: serif;
+    font-family: "Fira Sans", sans-serif;
     position: absolute;
     left: 20px;
     top: 15px;
@@ -207,8 +213,7 @@ a {
     height: 40px;
     border-radius: 50%;
     font-size: 50px;
-    line-height: 1.2;
-    text-align: center; }
+    line-height: 1.4; }
 
 .textPost pre {
   white-space: pre-wrap;
@@ -217,13 +222,12 @@ a {
   display: block;
   border-left: dashed 2px #3333ff;
   font-size: 14px;
-  margin: 20px 0;
-  padding-left: 30px;
-  margin-left: 20px; }
+  padding-left: 20px;
+  margin: 20px; }
 
 .formItem label {
   display: inline-block;
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
@@ -258,7 +262,7 @@ div > button.button {
   margin-top: 20px;
   margin-left: 45%;
   padding: 10px 20px;
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 18px;
   background-color: white;
   border: 1px solid #3333FF;
@@ -268,7 +272,7 @@ button.button {
   margin-top: 20px;
   margin-left: 40%;
   padding: 10px 20px;
-  font-family: "Cormorant", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 18px;
   background-color: white;
   border: 1px solid #3333FF;
