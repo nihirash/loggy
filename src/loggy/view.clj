@@ -8,11 +8,9 @@
   (:use [loggy.config]
         [loggy.utils]))
 
-(defn styles []
-  (safe-slurp (io/resource "style.css")))
+(def styles (safe-slurp (io/resource "style.css")))
 
-(defn script []
-  (safe-slurp (io/resource "script.js")))
+(def script (safe-slurp (io/resource "script.js")))
 
 (defn render-date [inst]
   (.format (java.text.SimpleDateFormat. "dd.MM.yyyy") inst))
@@ -59,7 +57,7 @@
     [:link {:href "/feed.xml" :type "application/atom+xml" :rel "alternative" :title "ATOM Feed"}]
     [:title title]]
    [:body.container
-    [:style {:dangerouslySetInnerHTML {:__html (str (styles))}} ]
+    [:style {:dangerouslySetInnerHTML {:__html (str styles)}} ]
     [:header.metaBar
      [:.headlineMetaBar
       [:a {:href (:host @config)}
@@ -69,7 +67,7 @@
     [:footer.footer
      [:p "(c) " (show-year) " "
       [:a.contact {:href (:url @config)} (:name @config)] (:copy @config)]]
-    [:script {:dangerouslySetInnerHTML {:__html (str (script))}}]]])
+    [:script {:dangerouslySetInnerHTML {:__html (str script)}}]]])
 
 (defn render-html [component]
   (str "<!DOCTYPE html>\n"

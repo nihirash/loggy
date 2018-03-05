@@ -171,11 +171,13 @@
   (let [args-map (apply array-map args)
         port-str (or (get args-map "-p")
                      (get args-map "--port")
+                     (System/getenv "PORT")
                      "8080")]
     (db/init)
     (read-config)
     (println "Starting web server on port" port-str)
-    (web/run #'app {:port (Integer/parseInt port-str)})))
+    (web/run #'app {:host "0.0.0.0"
+                    :port (Integer/parseInt port-str)})))
 
 (comment
   (def server (-main "--port" "8080"))
