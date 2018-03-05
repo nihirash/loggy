@@ -41,7 +41,7 @@ table {
 
 h1 {
   font-family: "Fira Sans", sans-serif;
-  font-size: 26px; }
+  font-size: 24px; }
 
 .metaBar {
   position: relative;
@@ -139,9 +139,11 @@ a {
   margin-bottom: 10px; }
   .footer *, .footer a {
     font-family: "Fira Sans", sans-serif;
-    color: #3333FF;
     margin: 5px;
-    text-align: center; }
+    text-align: center;
+    font-size: 16px; }
+  .footer a {
+    color: #3333FF; }
 
 .textPost p {
   font-family: "Fira Sans", sans-serif;
@@ -264,5 +266,10 @@ button.button {
   cursor: pointer; }
 
 @media (max-width: 480px) and (min-width: 320px) {
+  .headlineMetaBar {
+    padding: 0;
+    margin: 0; }
+  h1 {
+    text-align: center; }
   h2 {
     font-size: 20px; } }
