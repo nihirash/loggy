@@ -163,7 +163,8 @@
        (ring.middleware.params/wrap-params)
        (session/wrap-session)
        (ring.middleware.multipart-params/wrap-multipart-params)
-       (with-headers {"Cache-Control" "max-age=3600, must-revalidate"}))))
+       (with-headers {"Cache-Control" "no-cache"
+                      "Expire" "-1"}))))
 
 (defn -main
   "Inits app"
