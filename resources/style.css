@@ -62,21 +62,10 @@ h1 {
   max-width: 700px;
   margin: 0 auto; }
 
-h2 {
+h2, h3 {
   font-family: "Fira Sans", sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
-  font-style: normal;
-  line-height: 1.4;
-  letter-spacing: -.003em;
-  color: #3333FF;
-  margin-left: 20px;
-  margin-top: 10px; }
-
-h3 {
-  font-family: "Fira Sans", sans-serif;
-  font-size: 26px;
-  font-weight: 400;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -.003em;
@@ -206,13 +195,12 @@ a {
     font-family: "Fira Sans", sans-serif;
     position: absolute;
     left: 20px;
-    top: 15px;
-    color: white;
-    background: #3333FF;
+    top: 10px;
+    color: #3333FF;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    font-size: 50px;
+    font-size: 60px;
     line-height: 1.4; }
 
 .textPost pre {
