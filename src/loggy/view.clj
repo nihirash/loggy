@@ -53,7 +53,7 @@
    [:head
     [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
-    [:link {:href "https://fonts.googleapis.com/css?family=Cormorant" :rel "stylesheet"} ]
+    [:link {:href "https://fonts.googleapis.com/css?family=Fira+Sans:300" :rel "stylesheet"} ]
     [:link {:href "/feed.xml" :type "application/atom+xml" :rel "alternative" :title "ATOM Feed"}]
     [:title title]]
    [:body.container
