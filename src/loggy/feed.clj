@@ -18,7 +18,7 @@
      [:content {:type "text/html" :href url}
       (view/render-markdown (:body post))]]))
 
-(defn atom [post-ids]
+(defn atom-feed [post-ids]
   (let [posts (map db/get-post post-ids)
         updated (or (db/max-post-date posts)
                     (db/now))

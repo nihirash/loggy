@@ -95,7 +95,7 @@
 (defn atom-feed-action []
   {:status 200
    :headers {"Content-Type" "application/xml; charset=utf-8"}
-   :body (feed/atom (db/post-ids))})
+   :body (feed/atom-feed (db/post-ids))})
 
 (defn edit-post-form-action [id req]
   (wrap-authed req
@@ -163,8 +163,7 @@
        (ring.middleware.params/wrap-params)
        (session/wrap-session)
        (ring.middleware.multipart-params/wrap-multipart-params)
-       (with-headers {"Cache-Control" "no-cache"
-                      "Expires" "-1"}))))
+       (with-headers {"Cache-Control" "max-age=3600, must-revalidate"}))))
 
 (defn -main
   "Inits app"
