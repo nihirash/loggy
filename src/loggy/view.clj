@@ -41,7 +41,7 @@
                              [:a {:href (str "/post/" (:id post))} (:title post)])]]
       (when (:picture post)
         [:img.imgPost {:src (str "/post/" (:id post) "/" (:picture post) )}])
-      [:.textPost post-body-rendered]
+      [:.textPost {:dangerouslySetInnerHTML {:__html post-body-rendered}}]
       [:.buttonPostOpen
        (if full?
          [:a {:href "/"} "На главную"]
