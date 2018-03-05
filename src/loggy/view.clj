@@ -8,7 +8,7 @@
   (:use [loggy.config]
         [loggy.utils]))
 
-(def styles (safe-slurp (io/resource "style.css")))
+(defn styles [] (safe-slurp (io/resource "style.css")))
 
 (def script (safe-slurp (io/resource "script.js")))
 
@@ -57,7 +57,7 @@
     [:link {:href "/feed.xml" :type "application/atom+xml" :rel "alternative" :title "ATOM Feed"}]
     [:title title]]
    [:body.container
-    [:style {:dangerouslySetInnerHTML {:__html (str styles)}} ]
+    [:style {:dangerouslySetInnerHTML {:__html (str (styles))}} ]
     [:header.metaBar
      [:.headlineMetaBar
       [:a {:href (:host @config)}
