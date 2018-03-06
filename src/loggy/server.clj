@@ -136,7 +136,8 @@
   (compojure/GET "/nojs/:page" [page] (feed-page-action page))
   (compojure/GET "/page/:page" [page] (page-action page))
   (compojure/GET "/post/new" [] (redirect (str "/post/" (utils/time-based-uuid) "/edit")))
-  (compojure/GET "/post/:id/:img" [id img] (ring.util.response/file-response (str "data/posts/" id "/" img)))
+  (compojure/GET "/post/:id/:img" [id img] (some-> (ring.util.response/file-response (str "data/posts/" id "/" img))                                               
+                                                   (update :headers merge {"Cache-Control" "max-age=3600, must-revalidate"})))
   (compojure/GET "/post/:id" [id] (post-action id))
   
   ;; Auth
