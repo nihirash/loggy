@@ -162,9 +162,7 @@
    (-> routes
        (ring.middleware.params/wrap-params)
        (session/wrap-session)
-       (ring.middleware.multipart-params/wrap-multipart-params)
-       (with-headers {"Cache-Control" "no-cache"
-                      "Expire" "-1"}))))
+       (ring.middleware.multipart-params/wrap-multipart-params))))
 
 (defn -main
   "Inits app"
