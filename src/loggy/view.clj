@@ -21,7 +21,7 @@
 
 (defn cut-body [post-body]
   "Returns only first paragraph of post body"
-  (first (str/split post-body #"\n")))
+  (first (str/split post-body #"<!--cut-->")))
 
 (defn render-markdown [body]
   (endophile/html-string
