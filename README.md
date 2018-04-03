@@ -1,14 +1,11 @@
 # loggy
 
-A Clojure library designed to ... well, that part is up to you.
+Simple blog engine used for mine blog.
 
 ## Usage
 
-FIXME
+Run it with lein or create uberjar and use as standalone application.  
 
 ## License
 
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Copyright © 2018 Alexander Sharikhin
