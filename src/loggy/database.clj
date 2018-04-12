@@ -42,7 +42,9 @@
     (.mkdir dir)
     (when picture-name 
       (io/copy (:tempfile picture) (io/file dir picture-name)))
-    (spit (io/file dir "post.edn") (pr-str (assoc post :picture picture-name)))))
+    (let [old-picture (:picture (get-post (:id post)))
+          new-picture (or picture-name old-picture)]
+      (spit (io/file dir "post.edn") (pr-str (assoc post :picture new-picture))))))
 
 (defn init []
   (.mkdir (io/file "data/"))
