@@ -11,7 +11,7 @@
   (let [url (str (:host @config) "/post/" (:id post))]
     [:entry {}
      [:title {} (:title post)]
-     [:link {:rel "alternative" :type "text/html" :href url}]
+     [:link {:rel "alternate" :type "text/html" :href url}]
      [:id {} url]
      [:published {} (render-iso-date (:created post))]
      [:author {} [:name {} (:name @config)]]
